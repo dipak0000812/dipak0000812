@@ -18,12 +18,12 @@
 
 ---
 
+
 ## 💻 Tech Stack
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=c,cpp,css,solidity,html,java,js,py,ts,firebase,netlify,vercel,aws,anaconda,flask,nodejs,react,streamlit,web3,mongodb,mysql,couchbase,figma,matplotlib,numpy,pandas,git,github,docker,postman" />
+  <img src="https://skillicons.dev/icons?i=c,cpp,css,solidity,html,java,js,py,ts,firebase,netlify,vercel,aws,anaconda,flask,nodejs,react,mongodb,mysql,figma,git,github,docker,postman" />
 </p>
-
 ---
 
 ## 🏆 Competitive Programming

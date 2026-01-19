@@ -1,12 +1,13 @@
  
-<h1 align="center">👋 Hi there, I'm Dipak Prakash Dhangar</h1>
+<h1 align="center">👋 Hi there, I'm Dipak Dhangar</h1>
 
 <h3 align="center">
-  Aspiring AIML Engineer & Entrepreneur <br>
-  🚀 Team Lead @ Zeolike (Next-Gen Real Estate Startup) <br>
-  🧠 ML Intern @ Codtech IT Solutions | 🔗 Blockchain Explorer <br>
-  💡 AI & Real-World Problem Solver
+AIML Engineering Student | Open-Source Contributor <br>
+Team Lead @ Zeolike (Real Estate Tech) <br>
+ML Intern @ Codtech IT Solutions <br>
+Interested in scalable systems, applied ML, and real-world problem solving
 </h3>
+
 
 <p align="center">
   <img src="https://img.freepik.com/premium-photo/student-doing-coding-his-computer-setup_939033-14317.jpg" alt="Student Coding" width="400px" style="border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.25);" />

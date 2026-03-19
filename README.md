@@ -1,101 +1,118 @@
-<div><a href="https://cloud.layer5.io/user/2b851ebd-b400-4557-b9a0-1d07445fd4da?tab=badges&badge=first-design" alt="First Design" ><img width="175px" height="252px" src="https://badges.layer5.io/assets/badges/first-design/first-design.png" alt="First Design" /></a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup><a href="https://badges.layer5.io"></a></sup></div>
-
-
-<h1 align="center">👋 Hi, I'm Dipak Dhangar</h1>
-
-<h3 align="center">
-AIML Engineering Student | Open-Source Contributor <br>
-Team Lead @ Zeolike (Real Estate Tech) <br>
-ML Intern @ Codtech IT Solutions <br>
-Interested in scalable systems, applied ML, and real-world problem solving
-</h3>
-
-
 <p align="center">
-  <img src="https://img.freepik.com/premium-photo/student-doing-coding-his-computer-setup_939033-14317.jpg" alt="Student Coding" width="400px" style="border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.25);" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f172a,100:1e293b&height=250&section=header&text=Dipak%20Dhangar&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Backend%20Systems%20·%20Applied%20ML%20·%20Open%20Source&descAlignY=60&descSize=16" />
 </p>
-
-<p align="center" style="margin-top: 10px;">
-  <img src="https://readme-typing-svg.herokuapp.com?color=F72585&size=22&center=true&vCenter=true&width=800&lines=Welcome+to+my+GitHub+Profile!;Passionate+Tech+Enthusiast;DSA+%7C+AI+%7C+ML;Open+Source+Contributor;Lifelong+Learner+%F0%9F%9A%80" alt="Welcome Typing SVG" />
-</p>
-
----
-
-
-## 💻 Tech Stack
-
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=c,cpp,css,solidity,html,java,js,py,ts,firebase,netlify,vercel,aws,anaconda,flask,nodejs,react,mongodb,mysql,figma,git,github,docker,postman" />
-</p>
----
-
-## 🏆 Competitive Programming
-
-<p align="center">
-  <a href="https://leetcode.com/u/Dipak1106/">
-    <img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=white" />
-  </a>
-  <a href="https://www.codechef.com/users/dipak_09">
-    <img src="https://img.shields.io/badge/CodeChef-5B4638?style=for-the-badge&logo=codechef&logoColor=white" />
-  </a>
-  <a href="https://www.hackerrank.com/profile/dhangardip09">
-    <img src="https://img.shields.io/badge/HackerRank-2EC866?style=for-the-badge&logo=hackerrank&logoColor=white" />
-  </a>
-</p>
-
----
 
 <div align="center">
-  <img src="https://profile-readme-generator.com/assets/snake.svg" alt="Snake animation" width="90%" />
+
+[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=flat-square\&logo=vercel\&logoColor=white)](https://dipak-dhangar.vercel.app)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square\&logo=linkedin\&logoColor=white)](https://www.linkedin.com/in/dipak-dhangar/)
+[![Gmail](https://img.shields.io/badge/Gmail-EA4335?style=flat-square\&logo=gmail\&logoColor=white)](mailto:dhangardip09@gmail.com)
+[![LeetCode](https://img.shields.io/badge/LeetCode-FFA116?style=flat-square\&logo=leetcode\&logoColor=white)](https://leetcode.com/u/Dipak1106/)
+
 </div>
 
 ---
 
-## 📊 GitHub Stats
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=dipak0000812&theme=dark&hide_border=false&include_all_commits=true&count_private=true&show_icons=true" alt="GitHub Stats" height="180"/>
-  <img src="https://nirzak-streak-stats.vercel.app/?user=dipak0000812&theme=dark&hide_border=false" alt="Streak Stats" height="180"/>
-</p>
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=dipak0000812&theme=dark&hide_border=false&layout=compact&langs_count=8" alt="Top Languages" height="150" />
-</p>
+AIML student focused on backend systems and applied machine learning, building systems to understand how they behave under real constraints—job orchestration engines, ML-driven developer tools, and distributed system components. Active in open source (Microcks, Meshery, kworkflow) and exploring system design fundamentals like concurrency, queues, and consistency.
 
 ---
 
-### 🚩 Top Contributed Repos
+## Projects
 
-<p align="center">
-  <img src="https://github-contributor-stats.vercel.app/api?username=dipak0000812&limit=5&theme=dark&combine_all_yearly_contributions=true" alt="Top Contributed Repos" style="border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.3); max-width: 100%;" />
-</p>
+### [Orchestrix](https://github.com/dipak0000812/Orchestrix) — Job Orchestration Engine
 
----
+![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square\&logo=go\&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square\&logo=postgresql\&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square\&logo=docker\&logoColor=white)
+![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat-square\&logo=prometheus\&logoColor=white)
 
-<p align="center">
-  <a href="https://visitcount.itsvg.in">
-    <img src="https://visitcount.itsvg.in/api?id=dipak0000812&label=Profile%20Views&color=6A5ACD&icon=github" />
-  </a>
-</p>
+Async job engine in Go with job lifecycle management, worker pools, retry logic, and metrics. Built to understand concurrency and failure handling in queue-based systems.
 
----
+**Key details:**
 
-## 🌐 Connect With Me
-
-<p align="center">
-  <a href="https://www.linkedin.com/in/dipak-dhangar/">
-    <img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
-  </a>
-  <a href="https://github.com/dipak0000812">
-    <img src="https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
-  </a>
-  <a href="mailto:dhangardip09@gmail.com">
-    <img src="https://img.shields.io/badge/-Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
-  </a>
-</p>
+* PostgreSQL `SELECT FOR UPDATE SKIP LOCKED` for safe concurrent job claiming
+* Retryable vs permanent failure classification
+* Prometheus-based observability
+* Modular structure to avoid circular dependencies
 
 ---
 
-<p align="center">
-  <b>“Building the future, one byte at a time.”</b> 🚀
-</p>  
+### [PRISM-AI](https://github.com/dipak0000812/PRISM-AI) — PR Risk Analysis Agent
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square\&logo=python\&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square\&logo=fastapi\&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square\&logo=nextdotjs\&logoColor=white)
+![Claude](https://img.shields.io/badge/Claude-D4A017?style=flat-square)
+
+*GitLab AI Hackathon project.*
+
+System that analyzes pull requests and generates structured risk summaries before review using static analysis + heuristic scoring + LLM output.
+
+**Pipeline:** AST (`tree-sitter`) → dependency graph (`NetworkX`) → risk scoring → LLM summary → reviewer hints
+
+---
+
+### [SolanaStreaks](https://github.com/dipak0000812/SolanaStreaks) — Prediction Market Prototype · [Live](https://solana-streaks-6ynn.vercel.app/)
+
+![Rust](https://img.shields.io/badge/Rust-000000?style=flat-square\&logo=rust\&logoColor=white)
+![Solana](https://img.shields.io/badge/Solana-9945FF?style=flat-square\&logo=solana\&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square\&logo=typescript\&logoColor=white)
+
+On-chain prediction market prototype built with Rust/Anchor and a Next.js frontend.
+
+---
+
+## Open Source
+
+[![Microcks](https://img.shields.io/badge/Microcks-Active_Contributor-0D47A1?style=flat-square)](https://github.com/microcks)
+[![OpenTelemetry](https://img.shields.io/badge/OpenTelemetry-Contributor-425CC7?style=flat-square)](https://github.com/open-telemetry)
+[![kworkflow](https://img.shields.io/badge/kworkflow-Contributor-E95420?style=flat-square)](https://github.com/kworkflow/kworkflow)
+[![Layer5](https://img.shields.io/badge/Meshery-Contributor-00B39F?style=flat-square)](https://layer5.io)
+
+* Microcks — Contributions in API mocking/testing ecosystem
+* OpenTelemetry — Contribution under review
+* kworkflow — Linux workflow tooling contributions
+* Meshery / Layer5 — Contributor, earned First Design badge
+* Hacktoberfest 2024 — 4 PRs merged
+
+---
+
+## Technical Focus
+
+| Domain        | Stack                                                       |
+| ------------- | ----------------------------------------------------------- |
+| Languages     | Go · Python · TypeScript                                    |
+| Familiar With | C · C++ · Rust                                              |
+| Backend       | REST APIs · Worker pools · PostgreSQL · Docker · Prometheus |
+| ML & AI       | Scikit-learn · LSTM · spaCy · Claude API                    |
+| Exploring     | Distributed systems · Kafka / Redis · Linux                 |
+
+---
+
+## Currently
+
+* Extending Orchestrix (Redis/Kafka queues, priority scheduling)
+* Studying distributed systems (Raft, consistency models)
+* Contributing to Microcks, OpenTelemetry, kworkflow
+
+---
+
+## Stats
+
+<div align="center">
+
+<sub>Stats reflect public repository activity.</sub><br/><br/>
+
+<img src="https://github-readme-stats.vercel.app/api?username=dipak0000812&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&rank_icon=github" height="150"/>
+&nbsp;&nbsp;
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=dipak0000812&theme=tokyonight&hide_border=true&layout=compact&langs_count=5&hide=html,css" height="150"/>
+
+</div>
+
+---
+
+<div align="center">
+
+`dhangardip09@gmail.com` · [Portfolio](https://dipak-dhangar.vercel.app) · [LinkedIn](https://www.linkedin.com/in/dipak-dhangar/)
+
+</div>

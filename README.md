@@ -11,63 +11,49 @@
 
 </div>
 
+<p align="center">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f172a,100:1e293b&height=200&section=header&text=Dipak%20Dhangar&fontSize=38&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Backend%20%26%20Systems&descAlignY=60&descSize=15" />
+</p>
+
+
+
 ---
 
-Second-year AIML student. My main interest is backend systems — I want to understand what breaks under concurrency, how queues fail, and where consistency gets hard. I build things to answer those questions, not to ship products. Also contribute to open source projects in the API tooling and Linux kernel workflow space. Alongside systems work, I've built with scikit-learn, LSTMs, and spaCy — enough to understand where ML fits and where it doesn't.
+Second-year AIML engineering student. I spend most of my time on backend systems - mainly Go and Python - and I'm trying to get better at the stuff that's hard to learn from tutorials: concurrency bugs, retry logic, database locking, that kind of thing. I also have some background in ML (scikit-learn, LSTMs, basic NLP with spaCy) from coursework and a couple of projects.
 
 ---
 
 ## Projects
 
 ### [Orchestrix](https://github.com/dipak0000812/Orchestrix) — Job Orchestration Engine
+`Go` `PostgreSQL` `Docker` `Prometheus`
 
-![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat-square&logo=prometheus&logoColor=white)
+A job orchestration engine I built to actually run into and fix concurrency problems instead of just reading about them. It has a worker pool, a job state machine (PENDING → SCHEDULED → RUNNING → SUCCEEDED / FAILED / RETRYING), retries with exponential backoff, and a graceful shutdown that drains in-flight jobs.
 
-Async job engine in Go. Worker pool, full state machine (`PENDING → SCHEDULED → RUNNING → SUCCEEDED/FAILED/RETRYING`), exponential backoff, graceful drain on shutdown. Built primarily to work through real concurrency and failure-handling problems.
+A few specific bugs I hit and how I fixed them:
 
-Three specific things I had to debug and fix:
+- **Duplicate job pickup**: when I ran multiple scheduler instances, they'd sometimes grab the same job from the DB at the same time. Fixed it with `SELECT FOR UPDATE SKIP LOCKED` inside a transaction so each instance claims a non-overlapping set of jobs.
+- **Jobs retrying forever for no reason**: if a job's executor type wasn't registered, it would just keep retrying until it hit the max and fail silently - no useful error, just wasted cycles. I split errors into "retryable" vs "permanent" so missing executors and panics fail immediately instead of looping.
+- **Import cycle**: adding Prometheus metrics to the worker package created a cycle between `worker` and `api`. Pulled the metrics into their own package that both import separately.
 
-**Scheduler race** — Multiple scheduler instances polling the same DB table would double-claim jobs. Fixed by wrapping job claims in `SELECT FOR UPDATE SKIP LOCKED` inside a transaction. Each instance atomically acquires a non-overlapping job set.
-
-**Silent retry loops** — Unregistered executor types caused jobs to hit max retries silently, burning resources with no signal. Added explicit error classification: missing executors and panics route directly to `FAILED`; only actual execution errors are retryable.
-
-**Import cycle** — Attaching Prometheus instrumentation to the worker package created a `worker → api → worker` dependency cycle. Resolved by extracting metrics into a standalone package imported independently by both.
-
-`v1` done. Currently exploring Redis/Kafka-backed queues as an alternative to DB polling and adding priority scheduling.
+v1 is functional locally with Docker Compose. Not deployed yet - planning to put it on Render and possibly look at swapping the DB-polling scheduler for a Redis or Kafka-backed queue later.
 
 ---
 
 ### [PRISM-AI](https://github.com/dipak0000812/PRISM-AI) — PR Risk Analysis Tool
+`Python` `FastAPI` `Next.js` `Groq`
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
-![Claude](https://img.shields.io/badge/Claude-D4A017?style=flat-square)
+Built for the GitLab AI Hackathon (ZerothLayer). The idea: score how risky a pull request is *before* a human reviews it, without relying on an LLM to do the actual judgment.
 
-*GitLab AI Hackathon — ZerothLayer.*
+How it works:
+- `tree-sitter` parses changed files (Python / JS / TS) into ASTs
+- `NetworkX` builds an import dependency graph and works out what else in the codebase could be affected by the change
+- A set of deterministic checks (PR size, file churn, whether auth/payment code was touched, test coverage delta, dependency depth, how familiar the author is with that part of the codebase) produce a 0-100 risk score
+- An LLM (Llama 3.3 via Groq) takes that score and writes a plain-language summary for the reviewer - it doesn't influence the score itself
 
-Static analysis pipeline that scores pull request risk before review. The LLM generates the human-readable summary at the end — it does not do the analysis.
+The reasoning behind that order: I wanted the risk number to stay the same regardless of what the LLM outputs, so it's reproducible and you can sanity-check it without trusting the model.
 
-**Pipeline:**
-- tree-sitter parses changed files into ASTs (Python + JS/TS)
-- NetworkX builds the import dependency graph; BFS reversal computes structural blast radius
-- Six deterministic factors produce a 0–100 risk score: PR size, file churn rate, whether auth/payment modules were touched, test delta, dependency traversal depth, author familiarity with the module
-- Groq (Llama-3.3-70b) generates reviewer hints from the structured score — not from raw diff text
-
-The design decision I'm most satisfied with: keeping the LLM downstream of deterministic scoring so the risk number is auditable and reproducible regardless of model behavior.
-
----
-
-### [SolanaStreaks](https://github.com/dipak0000812/SolanaStreaks) — Prediction Market Prototype · [Live](https://solana-streaks-6ynn.vercel.app/)
-
-![Rust](https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white)
-![Solana](https://img.shields.io/badge/Solana-9945FF?style=flat-square&logo=solana&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-
-Hackathon prototype. On-chain prediction market with streak-based multipliers built on Solana devnet using Rust/Anchor. Main focus was understanding Anchor's account ownership model, escrow logic, and how bet payout instructions get structured on-chain. Not actively maintained.
+Working code, runs locally. Haven't deployed it yet.
 
 ---
 
@@ -88,40 +74,17 @@ Hackathon prototype. On-chain prediction market with streak-based multipliers bu
 
 ## Technical Focus
 
-| Domain        | Stack                                                       |
-| ------------- | ----------------------------------------------------------- |
-| Languages     | Go · Python · TypeScript                                    |
-| Familiar With | C · C++ · Rust                                              |
-| Backend       | REST APIs · Worker pools · PostgreSQL · Docker · Prometheus |
-| ML & AI       | Scikit-learn · LSTM · spaCy · Claude API                    |
-| Exploring     | Distributed systems · Kafka · Redis · Linux internals       |
+| Domain        | Stack                                                                 |
+| ------------- | -----------------------------------------------------------           |
+| Languages     | Go · Python                                                           |
+| Familiar With | C · C++ · Rust                                                        |
+| Backend       | REST APIs · FASTAPI . Worker pools · PostgreSQL · Docker · Prometheus |
+| ML & AI       | Scikit-learn · LSTM · spaCy · Claude API                              |
+          
 
 ---
 
-## Currently
+## Right now
 
-- Extending Orchestrix with Redis/Kafka queue backend; want to understand the operational tradeoffs vs DB polling under load
-- Working through Raft and consistency model literature (Lamport clocks, CRDT basics)
-- Contributing to Microcks, OpenTelemetry, kworkflow
+Deploying Orchestrix and PRISM-AI so they're not just "clone and run locally." After that, planning to look at Redis-backed queues for Orchestrix and see how it compares to the current DB-polling approach.
 
----
-
-## Stats
-
-<div align="center">
-
-<sub>Stats reflect public repository activity.</sub><br/><br/>
-
-<img src="https://github-readme-stats.vercel.app/api?username=dipak0000812&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&rank_icon=github" height="150"/>
-&nbsp;&nbsp;
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=dipak0000812&theme=tokyonight&hide_border=true&layout=compact&langs_count=5&hide=html,css" height="150"/>
-
-</div>
-
----
-
-<div align="center">
-
-`dhangardip09@gmail.com` · [Portfolio](https://dipak-dhangar.vercel.app) · [LinkedIn](https://www.linkedin.com/in/dipak-dhangar/)
-
-</div>
